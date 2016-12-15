@@ -27,7 +27,7 @@
 
   <p>Out of container paragraph</p>
 
-  <form action="page2.html" method="post">
+  <form action="page2.html" method="post" enctype="multipart/form-data">
     <input type="text" name="username"/>
     <input type="text" name="promocode" disabled/>
 
@@ -43,6 +43,8 @@
       <br/>
       <input type="radio" name="favourite_fruit" value="Custard Apple"/>Custard Apple
     </p>
+
+    <input type="file" name="upload_file" />
 
     <input type="submit" class="submit-form"/>
   </form>

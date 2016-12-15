@@ -34,6 +34,17 @@ defmodule ElementTestWithIds do
     assert attribute_value(element, "value") == "janedoe"
   end
 
+  test "should input into a file field" do
+    navigate_to "http://localhost:9090/page1.html"
+    element = find_element(:name, "upload_file")
+
+    input_into_field(element, Path.expand("./test/fixtures/foobar.csv"))
+    assert attribute_value(element, "value") =~ "foobar.csv"
+
+    # input_into_field(element, Path.expand("./barbaz.xls"))
+    # assert attribute_value(element, "value") =~ "barbaz.xls"
+  end
+
 
   test "should get tag name of element" do
     navigate_to "http://localhost:9090/page1.html"
